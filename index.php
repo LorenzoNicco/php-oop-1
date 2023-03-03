@@ -1,5 +1,55 @@
 <?php
+ class Movie {
+    public $title;
+    public $releaseYear;
+    public $genres;
 
+    function __construct(string $_title) {
+        $this->title = $_title;
+    }
+
+    public function setReleaseYear($Year) {
+        if (is_string($Year)) {
+            echo "Inserici un numero";
+        }
+        else {
+            $this->releaseYear = $Year;
+        }
+    }
+
+    public function setGenres($genre) {
+        if (is_string($genre)) {
+            $this->genres = $genre;
+        }
+        else {
+            echo "Input non valido: inserire una stringa";
+        }
+    }
+ }
+
+ $lotr = new Movie("The Lord Of The Rings");
+ $lotr->setReleaseYear(2001);
+ $lotr->setGenres('Fantasy');
+
+ var_dump($lotr);
+
+ echo $lotr->title;
+ echo '<br>';
+ echo $lotr->releaseYear;
+ echo '<br>';
+ echo $lotr->genres;
+
+ $padrino = new Movie("The Godfather Part 1");
+ $padrino->setReleaseYear(1972);
+ $padrino->setGenres('Thriller');
+
+ var_dump($padrino);
+
+ echo $padrino->title;
+ echo '<br>';
+ echo $padrino->releaseYear;
+ echo '<br>';
+ echo $padrino->genres;
 ?>
 
 <!DOCTYPE html>

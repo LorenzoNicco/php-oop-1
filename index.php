@@ -19,17 +19,23 @@
 
     public function setGenres($genre) {
         if (is_string($genre)) {
-            $this->genres = $genre;
+            $this->genres = explode(", ", $genre);
+
+            foreach ($this->genres as $singleGenre) {
+                echo $singleGenre;
+                echo '<br>';
+            }
         }
         else {
             echo "Input non valido: inserire una stringa";
         }
     }
+    
  }
 
  $lotr = new Movie("The Lord Of The Rings");
  $lotr->setReleaseYear(2001);
- $lotr->setGenres('Fantasy');
+ $lotr->setGenres('Fantasy, Action');
 
  var_dump($lotr);
 
@@ -37,7 +43,6 @@
  echo '<br>';
  echo $lotr->releaseYear;
  echo '<br>';
- echo $lotr->genres;
 
  $padrino = new Movie("The Godfather Part 1");
  $padrino->setReleaseYear(1972);
@@ -49,7 +54,6 @@
  echo '<br>';
  echo $padrino->releaseYear;
  echo '<br>';
- echo $padrino->genres;
 ?>
 
 <!DOCTYPE html>

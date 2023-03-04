@@ -1,5 +1,5 @@
 <?php
- class Movie {
+    class Movie {
     public $title;
     public $releaseYear;
     public $genres;
@@ -20,40 +20,43 @@
     public function setGenres($genre) {
         if (is_string($genre)) {
             $this->genres = explode(", ", $genre);
-
-            foreach ($this->genres as $singleGenre) {
-                echo $singleGenre;
-                echo '<br>';
-            }
         }
         else {
             echo "Input non valido: inserire una stringa";
         }
     }
-    
- }
 
- $lotr = new Movie("The Lord Of The Rings");
- $lotr->setReleaseYear(2001);
- $lotr->setGenres('Fantasy, Action');
+    }
 
- var_dump($lotr);
+    $lotr = new Movie("The Lord Of The Rings");
+    $lotr->setReleaseYear(2001);
+    $lotr->setGenres('Fantasy, Action');
 
- echo $lotr->title;
- echo '<br>';
- echo $lotr->releaseYear;
- echo '<br>';
+    var_dump($lotr);
 
- $padrino = new Movie("The Godfather Part 1");
- $padrino->setReleaseYear(1972);
- $padrino->setGenres('Thriller');
+    echo $lotr->title;
+    echo '<br>';
+    echo $lotr->releaseYear;
+    echo '<br>';
+    foreach ($lotr->genres as $singleGenre) {
+    echo $singleGenre;
+    echo '<br>';
+    }
 
- var_dump($padrino);
+    $padrino = new Movie("The Godfather Part 1");
+    $padrino->setReleaseYear(1972);
+    $padrino->setGenres('Thriller');
 
- echo $padrino->title;
- echo '<br>';
- echo $padrino->releaseYear;
- echo '<br>';
+    var_dump($padrino);
+
+    echo $padrino->title;
+    echo '<br>';
+    echo $padrino->releaseYear;
+    echo '<br>';
+    foreach ($padrino->genres as $singleGenre) {
+    echo $singleGenre;
+    echo '<br>';
+    }
 ?>
 
 <!DOCTYPE html>
